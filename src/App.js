@@ -13,6 +13,7 @@ function App() {
           Coded by
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://github.com/parvane-zand/react-temperature.git"
           >
             Parvaneh Zand
