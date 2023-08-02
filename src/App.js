@@ -9,6 +9,15 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h3>Weather Prediction</h3>
         <Weather city="Tehran" />
+        <h6>
+          Coded by
+          <a
+            target="_blank"
+            href="https://github.com/parvane-zand/react-temperature.git"
+          >
+            Parvaneh Zand
+          </a>
+        </h6>
       </header>
     </div>
   );
