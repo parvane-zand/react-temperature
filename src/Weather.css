@@ -1,4 +1,52 @@
-.attributes {
+.weather {
+  text-align: left;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/059/697/original/6119368.jpg?1671481891");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 30px 60px;
+  border-radius: 20px;
+  font-family: Nunito, Helvetica, sans-serif;
+}
+
+.weather form {
+  margin: 20px auto;
+}
+h2 {
+  color: rgb(33, 33, 33);
+}
+h6 {
+  color: rgb(33, 33, 33);
+}
+.degree {
+  color: rgb(33, 33, 33);
+  font-size: 180px;
+  line-height: 1;
+  font-weight: 400;
+}
+.weather units {
+  position: relative;
   font-size: 16px;
+  top: -34px;
+}
+.attributes {
+  text-align: center;
+  color: #f8f9fa;
+  text-shadow: 2px 0px 10px black;
+}
+.descriptions {
+  text-align: center;
+  color: #f8f9fa;
+  text-shadow: 2px 0px 10px black;
+}
+.weather li {
+  color: rgb(33, 33, 33);
   list-style: none;
+  font-size: 16px;
+}
+.weather ul {
+  padding: 0;
+  margin: 0;
 }

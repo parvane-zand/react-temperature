@@ -27,8 +27,8 @@
 .App-link {
   color: #61dafb;
 }
-h6 {
-  font-size: 10px;
+.App footer {
+  font-size: 11px;
 }
 @keyframes App-logo-spin {
   from {
