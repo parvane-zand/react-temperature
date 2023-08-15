@@ -3,6 +3,7 @@ import axios from "axios";
 import { InfinitySpin } from "react-loader-spinner";
 import "./Weather.css";
 import Forecast from "./Forecast";
+import ConvertDate from "./ConvertDate";
 
 export default function Weather() {
   const [city, setCity] = useState("");
@@ -33,12 +34,12 @@ export default function Weather() {
     setWeather({
       loaded: true,
       name: response.data.name,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      precipitation: response.data.main.precipitation,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
   function handleSubmit(event) {
@@ -57,10 +58,15 @@ export default function Weather() {
       <div className="weather">
         {form}
         <h2>{weather.name}</h2>
-        <h6>Saturday, 17:05</h6>
+        <ConvertDate date={weather.date} />
         <br></br>
         <div className="row attributes">
-          <div className="col-3"></div>
+          <div className="col-3">
+            <img
+              src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+              alt="icon"
+            ></img>
+          </div>
           <div className="col-6 degree float-left">
             {Math.round(weather.temperature)}
           </div>
