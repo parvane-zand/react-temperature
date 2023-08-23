@@ -4,7 +4,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  max-width: 550px;
+  width: 650px;
   margin: 30px auto;
   padding: 30px 60px;
   border-radius: 20px;
@@ -21,10 +21,11 @@ h6 {
   color: rgb(33, 33, 33);
 }
 .degree {
-  color: rgb(33, 33, 33);
+  color: #212121;
   font-size: 130px;
   line-height: 1;
   font-weight: 400;
+  text-align: center;
 }
 .weather units {
   position: relative;
@@ -38,10 +39,11 @@ h6 {
   text-shadow: 2px 0px 10px black;
 }
 .descriptions {
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   color: #f8f9fa;
   text-shadow: 2px 0px 10px black;
+  line-height: 3;
 }
 .weather li {
   color: rgb(33, 33, 33);

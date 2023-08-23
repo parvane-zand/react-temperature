@@ -4,6 +4,7 @@ import { InfinitySpin } from "react-loader-spinner";
 import "./Weather.css";
 import Forecast from "./Forecast";
 import ConvertDate from "./ConvertDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Weather() {
   const [city, setCity] = useState("");
@@ -61,16 +62,13 @@ export default function Weather() {
         <ConvertDate date={weather.date} />
         <br></br>
         <div className="row attributes">
-          <div className="col-3">
-            <img
-              src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-              alt="icon"
-            ></img>
+          <div className="col-4">
+            <WeatherIcon icon={weather.icon} />
           </div>
-          <div className="col-6 degree float-left">
+          <div className="col-4 degree float-left">
             {Math.round(weather.temperature)}
           </div>
-          <div className="col-3">
+          <div className="col-4">
             <span className="units">
               <a href="/" onClick="">
                 °C
@@ -85,9 +83,9 @@ export default function Weather() {
         </div>
         <div>
           <div className="row descriptions">
-            <div className="col">{weather.description}</div>
-            <div className="col">Humidity: {Math.round(weather.humidity)}%</div>
-            <div className="col">Wind: {Math.round(weather.wind)}km/h</div>
+            <div className="col-4">{weather.description}</div>
+            <div className="col-4">Humidity: {Math.round(weather.humidity)}%</div>
+            <div className="col-4">Wind: {Math.round(weather.wind)}km/h</div>
           </div>
         </div>
         <Forecast city={city} />
