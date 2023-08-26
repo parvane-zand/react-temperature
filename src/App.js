@@ -9,7 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Weather city="Tehran" />
       </header>
-      <footer>
+      <footer className="App-footer">
         Coded by {""}
         <a
           target="_blank"
