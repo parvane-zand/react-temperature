@@ -7,6 +7,7 @@ export default function Forecast(props) {
   const [minTemp, setminTemp] = useState("");
   const [maxTemp, setmaxTemp] = useState("");
   let [loaded, setLoaded] = useState(false);
+  let [forecastData, setForecastData] = useState(null);
 
   function showForecast(response) {
     console.log(response);
@@ -14,6 +15,7 @@ export default function Forecast(props) {
     let date = new Date(forecastDay * 1000);
     let day = date.getDay();
     let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    setForecastData(response.data.daily);
     setName(weekDays[day]);
     setminTemp(response.data.daily[0].temp.min);
     setmaxTemp(response.data.daily[0].temp.max);
@@ -27,12 +29,12 @@ export default function Forecast(props) {
         <div className="col-2">
           <strong>{Name}</strong>
           <div className="icons">
-            <WeatherIcon icon={props.info.icon} />
+            <WeatherIcon icon={forecastData[0].weather[0].icon} size={40} />{" "}
           </div>
           <span className="future-max">
-            <strong>{Math.round(minTemp)}°</strong>
+            <strong>{Math.round(maxTemp)}°</strong>
           </span>
-          <span className="future-min"> {Math.round(maxTemp)}°</span>
+          <span className="future-min"> {Math.round(minTemp)}°</span>
         </div>
       </div>
     );

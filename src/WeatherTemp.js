@@ -34,7 +34,7 @@ export default function WeatherTemp(props) {
     return (
       <div className="row attributes">
         <div className="col-4">
-          <WeatherIcon icon={props.icon} />
+          <WeatherIcon icon={props.icon} size={60} />
         </div>
         <div className="col-4 degree float-left">
           {Math.round((props.celsius * 9) / 5 + 32)}
