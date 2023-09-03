@@ -41,8 +41,7 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      lat: response.data.coord.lat,
-      lon: response.data.coord.lon,
+      coord : response.data.coord
     });
   }
   function handleSubmit(event) {
