@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { InfinitySpin } from "react-loader-spinner";
 import "./Weather.css";
 import Forecast from "./Forecast";
 import ConvertDate from "./ConvertDate";
@@ -78,8 +77,6 @@ export default function Weather() {
     return (
       <div>
         {form}
-        <h6>loading...</h6>
-        <InfinitySpin width="50" color="#4fa94d" />
       </div>
     );
   }
