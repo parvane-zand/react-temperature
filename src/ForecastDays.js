@@ -7,7 +7,6 @@ export default function ForecastDays(props) {
     let day = date.getDay();
     let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let dayName = weekDays[day];
-    console.log(dayName);
     return (
         <div>
           <strong>{dayName}</strong>

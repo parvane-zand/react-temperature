@@ -31,7 +31,6 @@ export default function Weather() {
   );
 
   function showWeather(response) {
-    console.log(response);
     setWeather({
       loaded: true,
       name: response.data.name,
