@@ -1,41 +1,30 @@
 import React, { useState } from "react";
 import axios from "axios";
-import WeatherIcon from "./WeatherIcon";
+import ForecastDays from "./ForecastDays";
 
 export default function Forecast(props) {
-  const [Name, setName] = useState("");
-  const [minTemp, setminTemp] = useState("");
-  const [maxTemp, setmaxTemp] = useState("");
   let [loaded, setLoaded] = useState(false);
   let [forecastData, setForecastData] = useState(null);
 
   function showForecast(response) {
     console.log(response);
-    let forecastDay = response.data.daily[0].dt;
-    let date = new Date(forecastDay * 1000);
-    let day = date.getDay();
-    let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     setForecastData(response.data.daily);
-    setName(weekDays[day]);
-    setminTemp(response.data.daily[0].temp.min);
-    setmaxTemp(response.data.daily[0].temp.max);
     setLoaded(true);
   }
 
   if (loaded) {
     return (
-      <div>
+      <div className="row">
         <hr />
-        <div className="col-2">
-          <strong>{Name}</strong>
-          <div className="icons">
-            <WeatherIcon icon={forecastData[0].weather[0].icon} size={40} />{" "}
-          </div>
-          <span className="future-max">
-            <strong>{Math.round(maxTemp)}°</strong>
-          </span>
-          <span className="future-min"> {Math.round(minTemp)}°</span>
-        </div>
+        {forecastData.map(function (dailyForecast, index) {
+          if ( 0 < index && index < 6) {
+            return (
+              <div className="col-2" key={index}>
+                <ForecastDays data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
       </div>
     );
   } else {
